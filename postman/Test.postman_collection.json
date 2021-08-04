@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "4e2814bf-c5f3-4f4f-9fe6-2dea12e33f6c",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9000/car/adverts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/car/adverts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"car",
+						"adverts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/car/advert/89",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 89,\r\n    \"title\": \"Title for advert 88\",\r\n    \"fuelType\": \"diesel\",\r\n    \"price\": 9999,\r\n    \"isNew\": false,\r\n    \"mileage\": 1453,\r\n    \"firstRegistration\": \"2014-05-05\"\r\n    }\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:9000/car/advert/89",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"car",
+						"advert",
+						"89"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/car/advert/89",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/car/advert/89",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"car",
+						"advert",
+						"89"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/car/adverts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Transfer-Encoding",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 89,\r\n    \"title\": \"Title for advert 89\",\r\n    \"fuelType\": \"diesel\",\r\n    \"price\": 2000,\r\n    \"isNew\": false,\r\n    \"mileage\": 1453,\r\n    \"firstRegistration\": \"2014-05-05\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/car/adverts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"car",
+						"adverts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
