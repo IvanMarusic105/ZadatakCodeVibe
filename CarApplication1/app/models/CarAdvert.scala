@@ -1,21 +1,13 @@
 package models
+import io.circe.{Decoder, Encoder}
+import io.circe.generic.semiauto.{deriveDecoder, deriveEncoder}
 import play.api.libs.json.Json
-
-/*import models.FuelType.FuelType
-
-object FuelType extends Enumeration {
-  type FuelType = Value
-  val diesel, gasoline = Value
-
-  def isSomething( f : String) : FuelType = f.toLowerCase() match {
-    case "diesel" => FuelType.diesel
-    case "gasoline" => FuelType.gasoline
-  }
-}*/
-
+/*
+* Our data object instance of CarAdvert with its associated values and attributes.
+* */
 case class CarAdvert(id: Int, title: String, fuelType: String,
                      price: Int, isNew: Boolean, mileage: Int, firstRegistration: String) {
-
+  //validating that CarAdvert has no negative int values
   def areValuesPositive () : Boolean = {
     if(this.price >= 0 && this.mileage >= 0 && this.id >= 0 ){
       true
@@ -27,6 +19,7 @@ case class CarAdvert(id: Int, title: String, fuelType: String,
 }
 
 object CarAdvert{
-  implicit val carAdvertImplicitReads = Json.reads[CarAdvert]
-  implicit val carAdvertImplicitWrites = Json.writes[CarAdvert]
+  implicit val carAdvertDecoder: Decoder[CarAdvert] = deriveDecoder[CarAdvert]
+  implicit val carAdvertEncoder: Encoder[CarAdvert] = deriveEncoder[CarAdvert]
 }
+

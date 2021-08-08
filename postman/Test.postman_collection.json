@@ -38,7 +38,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 89,\r\n    \"title\": \"Title for advert 88\",\r\n    \"fuelType\": \"diesel\",\r\n    \"price\": 9999,\r\n    \"isNew\": false,\r\n    \"mileage\": 1453,\r\n    \"firstRegistration\": \"2014-05-05\"\r\n    }\r\n"
+					"raw": "{\r\n    \"id\": 89,\r\n    \"title\": \"Title for advert 88\",\r\n    \"fuelType\": \"diesel\",\r\n    \"price\": 298,\r\n    \"isNew\": false,\r\n    \"mileage\": 1453,\r\n    \"firstRegistration\": \"2014-05-05\"\r\n    }\r\n"
 				},
 				"url": {
 					"raw": "http://localhost:9000/car/advert/89",
@@ -107,6 +107,38 @@
 					"path": [
 						"car",
 						"adverts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/car/adverts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/car/adverts/sort/?sortby=price&order=descending",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"car",
+						"adverts",
+						"sort",
+						""
+					],
+					"query": [
+						{
+							"key": "sortby",
+							"value": "price"
+						},
+						{
+							"key": "order",
+							"value": "descending"
+						}
 					]
 				}
 			},

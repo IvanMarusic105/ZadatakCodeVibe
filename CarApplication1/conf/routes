@@ -10,23 +10,20 @@ GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
 GET     /message                    controllers.AsyncController.message
 
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-
 #Get all car adverts
 GET     /car/adverts                controllers.CarAdvertsController.getAllCarAdverts
 
 #Get specific car advert by id
 GET     /car/adverts/:id            controllers.CarAdvertsController.getCarAdvertByID(id: Int)
 
-#NOT COMPLETED
+#sort carAdvert list based on sortby parameters sortyby defines the attribute to be sorted and the order for ascending or descending order
+GET     /car/adverts/sort/ controllers.CarAdvertsController.sortListBasedOnParam(sortby: String, order: String)
+
 #Create a car advert
 POST    /car/adverts                controllers.CarAdvertsController.addCarAdvert()
 
-#NOT COMPLETED
 #Update a car advert
 PUT     /car/advert/:id             controllers.CarAdvertsController.updateCarAdvert(id: Int)
 
-#NOT COMPLETED
 #Delete a car advert
 DELETE  /car/advert/:id             controllers.CarAdvertsController.deleteCarAdvert(id: Int)

@@ -21,5 +21,10 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-generic",
   "io.circe" %% "circe-parser"
 ).map(_ % circeVersion)
+//database plug-in
 
+libraryDependencies += jdbc
 
+libraryDependencies ++= Seq(
+  "mysql" % "mysql-connector-java" % "8.0.25"
+)
